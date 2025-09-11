@@ -44,5 +44,8 @@ def mergesort(arr, low, high):
 if __name__ == "__main__":
     arr = [60,40,90,75,30,75,20,50,40]
     size = len(arr)
+    print(f"\nsize of the array is : {size}")
+    print()
     mergesort(arr, 0 , size-1)
     print("Sorted array : ", arr)
+    print()
