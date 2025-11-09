@@ -12,11 +12,16 @@ class Graph:
 
     def printMST(self, parent):
         print("Edge \tWeight")
+        total_weight = 0
         for i in range(1, self.V):
             if parent[i] is not None:
-                print(parent[i], "-", i, "\t", self.graph[i][parent[i]])
+                weight = self.graph[i][parent[i]]
+                print(parent[i], "-", i, "\t", weight)
+                total_weight += weight
             else:
                 print(f"Vertex {i} is not connected to MST")
+        print(f"\nTotal MST Weight: {total_weight}")
+        return total_weight
     
     def minKey(self, key, mstSet):
         min_val = sys.maxsize
@@ -71,7 +76,7 @@ def test_prims_algorithm():
     
     parent1 = g1.primMST()
     print("\nMST edges:")
-    g1.printMST(parent1)
+    weight1 = g1.printMST(parent1)
     
     # Test Case 2: Complex 6-vertex graph
     print("\n\nTest Case 2: Complex 6-vertex graph")
@@ -92,7 +97,7 @@ def test_prims_algorithm():
     
     parent2 = g2.primMST()
     print("\nMST edges:")
-    g2.printMST(parent2)
+    weight2 = g2.printMST(parent2)
     
     # Test Case 3: Single vertex (edge case)
     print("\n\nTest Case 3: Single vertex graph")
@@ -106,7 +111,7 @@ def test_prims_algorithm():
     
     parent3 = g3.primMST()
     print("\nMST edges:")
-    g3.printMST(parent3)
+    weight3 = g3.printMST(parent3)
     
     # Test Case 4: Disconnected graph
     print("\n\nTest Case 4: Disconnected graph")
@@ -125,7 +130,7 @@ def test_prims_algorithm():
     
     parent4 = g4.primMST()
     print("\nMST edges:")
-    g4.printMST(parent4)
+    weight4 = g4.printMST(parent4)
     
     # Test Case 5: Complete graph
     print("\n\nTest Case 5: Complete graph")
@@ -145,7 +150,17 @@ def test_prims_algorithm():
     
     parent5 = g5.primMST()
     print("\nMST edges:")
-    g5.printMST(parent5)
+    weight5 = g5.printMST(parent5)
+    
+    # Summary of all test cases
+    print("\n" + "=" * 50)
+    print("SUMMARY OF MST WEIGHTS")
+    print("=" * 50)
+    print(f"Test Case 1 (4-vertex): {weight1}")
+    print(f"Test Case 2 (6-vertex): {weight2}")
+    print(f"Test Case 3 (1-vertex): {weight3}")
+    print(f"Test Case 4 (disconnected): {weight4}")
+    print(f"Test Case 5 (complete): {weight5}")
 
 
 def calculate_mst_weight(graph, parent):
@@ -184,10 +199,9 @@ def main():
     
     parent = g.primMST()
     print("\nMST edges:")
-    g.printMST(parent)
+    total_weight = g.printMST(parent)
     
-    total_weight = calculate_mst_weight(g, parent)
-    print(f"\nTotal MST weight: {total_weight}")
+    print(f"\nFinal MST weight: {total_weight}")
 
 
 if __name__ == "__main__":
