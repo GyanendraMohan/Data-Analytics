@@ -484,3 +484,9 @@ This folder contains Python implementations of foundational algorithms and class
 ## Contact
 
 For queries, improvement suggestions, or error reports, reach out to the project maintainer, instructor, or your lab teaching assistant.
+
+## AI Definition
+
+Standard definition of Artificial Intelligence (AI):
+
+Artificial Intelligence is the branch of computer science that deals with creating systems capable of performing tasks that normally require human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.
