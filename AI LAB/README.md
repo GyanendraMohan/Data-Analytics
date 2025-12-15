@@ -490,3 +490,22 @@ For queries, improvement suggestions, or error reports, reach out to the project
 Standard definition of Artificial Intelligence (AI):
 
 Artificial Intelligence is the branch of computer science that deals with creating systems capable of performing tasks that normally require human intelligence, such as learning, reasoning, problem-solving, perception, and decision-making.
+
+## AO STAR Algo theory
+
+AO\* (AO Star) Algorithm — Theory
+
+AO* is a heuristic search algorithm used to find the optimal solution path in an AND–OR graph.
+It is an extension of the A* algorithm and is mainly used in problem reduction and AI planning problems.
+
+AND–OR Graph
+
+OR node: Only one child needs to be solved.
+
+AND node: All children must be solved.
+
+Solution is a subgraph, not a single path.
+
+Basic Idea
+
+AO\* uses heuristic estimates to guide the search and updates costs dynamically until the minimum-cost solution graph is found.
